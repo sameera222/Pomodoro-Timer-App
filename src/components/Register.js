@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { IoLogoGoogle} from "react-icons/io";
+import { IoLogoGoogle } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { auth, db } from "../firebase/firebase";
@@ -13,7 +13,6 @@ import {
 import { doc, setDoc } from "firebase/firestore";
 import { profileColors } from "../utils/constant";
 
-
 const Register = () => {
   const gProvider = new GoogleAuthProvider();
   const { currentUser, isLoading } = useAuth();
@@ -23,7 +22,6 @@ const Register = () => {
     if (!isLoading && currentUser) {
       // it means user logged in
       navigate("/");
-
     }
   }, [currentUser, isLoading]);
   const signInWithGoogle = async () => {
@@ -58,7 +56,7 @@ const Register = () => {
       });
 
       console.log(user);
-      navigate('/')
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -66,10 +64,12 @@ const Register = () => {
   return isLoading || (!isLoading && currentUser) ? (
     <div>Loading</div>
   ) : (
-    <div className="flex items-center justify-center h-screen bg-c1">
+    <div className="md:flex items-center justify-center h-screen bg-c1">
       <div className="flex flex-col items-center ">
         <div className="text-center">
-          <div className="text-4xl font-bold text-white">Create New Account</div>
+          <div className="text-4xl font-bold text-white">
+            Create New Account
+          </div>
         </div>
         <div className="flex flex-row justify-center items-center w-full gap-2 mt-10 mb-5">
           <div
@@ -78,18 +78,18 @@ const Register = () => {
           >
             <div className="flex items-center justify-center w-full h-full gap-3 font-semibold text-white rounded-md bg-c1">
               <IoLogoGoogle size={24} />
-              <span>Sign up with Google</span>
+              <span className="text-sm md:text-base">Sign up with Google</span>
             </div>
           </div>
-        
         </div>
-        <div className="flex items-center gap-1">
+        <div className="md:flex items-center gap-1">
           <span className="w-5 h-[1px] bg-c3"></span>
           <span className="font-semibold text-white">OR</span>
           <span className="w-5 h-[1px] bg-c3"></span>
         </div>
+
         <form
-          className=" flex flex-col items-center gap-3 w-[500px] mt-5"
+          className="flex flex-col items-center gap-3 w-full md:w-[500px] mt-5 px-4 md:px-0"
           onSubmit={handleSubmit}
         >
           <input
@@ -117,6 +117,7 @@ const Register = () => {
             Sign Up
           </button>
         </form>
+
         <div className="flex justify-center gap-1 mt-5 text-c3">
           <span>Already have Account ?</span>
           <Link

@@ -87,6 +87,8 @@ export const Home = () => {
 
   return (
     <>
+  
+
       <div className="flex flex-col items-start p-4">
         <div className="mt-0 p-0">
           <button
@@ -97,8 +99,8 @@ export const Home = () => {
           </button>
         </div>
       </div>
-      <div className="w-full h-screen flex justify-center items-center bg-gradient-to-b from-blue-100 to-blue-300">
-        <div className="w-96 bg-white p-8 rounded-lg shadow-lg">
+      <div className="w-full h-screen md:flex flex-col justify-center items-center bg-gradient-to-b from-blue-100 to-blue-300">
+        <div className="md:w-96 bg-white p-8 rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold mb-6 text-center">Pomodoro Timer</h1>
           <div className="mb-6">
             <h2 className="text-lg font-semibold text-center mb-2">

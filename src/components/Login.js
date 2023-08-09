@@ -65,11 +65,11 @@ const Login = () => {
   return isLoading || (!isLoading && currentUser) ? (
     <div>Loading</div>
   ) : (
-    <div className="flex items-center justify-center h-screen bg-c1">
+    <div className="md:flex items-center justify-center h-screen bg-c1">
       <ToastMessage />
       <div className="flex flex-col items-center ">
         <div className="text-center">
-          <div className="text-4xl font-bold text-white">
+          <div className="text-4xl  font-bold text-white">
             Login to Your Account
           </div>
         </div>
@@ -80,7 +80,7 @@ const Login = () => {
           >
             <div className="flex items-center justify-center w-full h-full gap-3 font-semibold text-white rounded-md bg-c1">
               <IoLogoGoogle size={24} />
-              <span>Login with Google</span>
+              <span className="text-sm md:text-base">Login with Google</span>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ const Login = () => {
           <span className="w-5 h-[1px] bg-c3"></span>
         </div>
         <form
-          className=" flex flex-col items-center gap-3 w-[500px] mt-5"
+          className=" flex flex-col items-center gap-3 w-full px-4 md:px-0 md:w-[500px] mt-5"
           onSubmit={handleSubmit}
         >
           <input
@@ -115,7 +115,7 @@ const Login = () => {
             Login to Your Account
           </button>
         </form>
-        <div className="flex justify-center gap-1 mt-5 text-c3">
+        <div className="md:flex justify-center gap-1 mt-5 text-c3">
           <span>Not a Member Yet ?</span>
           <Link
             to="/register"
